@@ -39,8 +39,11 @@ pipeline {
                         returnStdout: true
 
                     ).trim()
+			
+			echo "ACTIVE_TG = ${ACTIVE_TG}"
+			echo "BLUE_TG = ${BLUE_TG}"
 
-                    if (ACTIVE_TG == BLUE_TG) {
+                    if (ACTIVE_TG.trim() == BLUE_TG.trim()) {
 
                         env.INACTIVE = "green"
                         env.NEXT_TG = GREEN_TG
@@ -99,6 +102,7 @@ pipeline {
                 --default-actions Type=forward,TargetGroupArn=$NEXT_TG
                 """
             }
+		echo "Switching traffic to ${env.NEXT_TG}"
         }
     }
 
