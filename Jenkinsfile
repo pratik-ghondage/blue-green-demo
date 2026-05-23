@@ -95,6 +95,7 @@ pipeline {
         stage('Switch Traffic') {
 
             steps {
+		echo "Switching traffic to ${env.NEXT_TG}"
 
                 sh """
                 aws elbv2 modify-listener \
@@ -102,7 +103,7 @@ pipeline {
                 --default-actions Type=forward,TargetGroupArn=$NEXT_TG
                 """
             }
-		echo "Switching traffic to ${env.NEXT_TG}"
+		
         }
     }
 
