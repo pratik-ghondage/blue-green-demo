@@ -5,12 +5,20 @@ TARGET=$1
 BLUE_SERVER="15.207.254.148"
 GREEN_SERVER="13.200.222.94"
 
-KEY="/home/ubuntu/Firstkey.pem"
+KEY="/var/lib/jenkins/.ssh/Firstkey.pem"
 
 if [ "$TARGET" == "blue" ]; then
+
     SERVER=$BLUE_SERVER
+
+    echo "<h1>BLUE Environment Deployment</h1>" > index.html
+
 else
+
     SERVER=$GREEN_SERVER
+
+    echo "<h1>GREEN Environment Deployment</h1>" > index.html
+
 fi
 
 echo "Deploying to $TARGET server: $SERVER"
