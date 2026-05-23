@@ -17,7 +17,7 @@ pipeline {
         stage('Clone Repository') {
 
             steps {
-                git 'https://github.com/YOUR_USERNAME/blue-green-demo.git'
+                git 'https://github.com/pratik-ghondage/blue-green-demo.git'
             }
         }
 
