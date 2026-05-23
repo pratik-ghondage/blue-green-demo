@@ -4,12 +4,12 @@ pipeline {
 
     environment {
 
-        BLUE_TG = "BLUE_TARGET_GROUP_ARN"
-        GREEN_TG = "GREEN_TARGET_GROUP_ARN"
+        BLUE_TG = "arn:aws:elasticloadbalancing:ap-south-1:289880681403:targetgroup/blue-tg/9e494a6aabfe0b58"
+        GREEN_TG = "arn:aws:elasticloadbalancing:ap-south-1:289880681403:targetgroup/green-tg/14b6d335514e5213"
 
-        LISTENER_ARN = "LISTENER_ARN"
+        LISTENER_ARN = "arn:aws:elasticloadbalancing:ap-south-1:289880681403:listener/app/blue-green-alb/f25808da238ffacf/fffe9a0c2b93e27b"
 
-        ALB_DNS = "YOUR_ALB_DNS"
+        ALB_DNS = "blue-green-alb-1371622144.ap-south-1.elb.amazonaws.com"
     }
 
     stages {

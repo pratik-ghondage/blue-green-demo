@@ -17,7 +17,7 @@ echo "Deploying to $TARGET server: $SERVER"
 
 scp -i $KEY -o StrictHostKeyChecking=no index.html ubuntu@$SERVER:/tmp/
 
-ssh -i $KEY -o StrictHostKeyChecking=no ubuntu@$SERVER << EOF
+ssh -T -i $KEY -o StrictHostKeyChecking=no ubuntu@$SERVER << EOF
 
 sudo cp /tmp/index.html /var/www/html/index.html
 
